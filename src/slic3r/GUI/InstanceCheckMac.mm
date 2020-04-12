@@ -21,8 +21,8 @@
 	//NSLog(@"userinfo %@", msg.userInfo);
 	//NSLog(@"userinfo data %@", msg.userInfo[@"data"]);
 	//maximize window
-	[[NSApplication sharedApplication] deminiaturize];
-	//bring window to front
+	[[[NSApplication sharedApplication] mainWindow] deminiaturize];
+	//bring window to front 
 	[[NSApplication sharedApplication] activateIgnoringOtherApps : YES];
 	//pass message
 	Slic3r::GUI::wxGetApp().other_instance_message_handler()->handle_message(std::string([msg.userInfo[@"data"] UTF8String]));
